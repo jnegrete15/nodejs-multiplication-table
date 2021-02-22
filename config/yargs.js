@@ -5,23 +5,23 @@ const argv = require('yargs')
       alias: 'base',
       type: 'number',
       demandOption: 'true',
-      description: 'Es la base de la multiplicación'
+      description: 'Multiplicand number'
     })
     .option('l' , {
       alias: 'list',
       type: 'boolean',
       default: false,
-      description: 'Muestra la tabla en consola'
+      description: 'Show product in console'
     })
     .option('h', {
       alias: 'hasta',
       type: 'number',
       default: 10,
-      description: 'Hasta que número se multiplicará la base'
+      description: 'Multiplier number'
     })
     .check((argv, options) => {
       if( isNaN(argv.b)){
-        throw 'La base tiene que ser un número'.red
+        throw 'Multiplicand has to be a number'.red
       }
       return true
     })
